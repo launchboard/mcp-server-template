@@ -1,11 +1,12 @@
 from fastmcp import FastMCP, Context
 import os
+from pathlib import Path
 
 mcp = FastMCP("Portfolio Assistant - Helping users explore a portfolio of projects.")
 
 # Get contents of portfolio.md into a variable
 portfolio_contents = ""
-with open("portfolio.md", "r") as file:
+with open(Path(__file__).parent / "portfolio.md", "r") as file:
     portfolio_contents = file.read()
 
 
@@ -43,4 +44,4 @@ port = int(os.getenv("PORT", 8000))
 
 
 if __name__ == "__main__":
-    mcp.run(transport="http", port=port)
+    mcp.run(transport="http", host="0.0.0.0", port=port)
