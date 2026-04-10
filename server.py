@@ -38,6 +38,8 @@ async def find_relevant_connection(interests: str, ctx: Context) -> str:
 
     return response.text
 
+port = int(os.getenv("PORT", 8000))
+
 
 if __name__ == "__main__":
-    mcp.run(transport="http", port=8000)
+    mcp.run(transport="http", port=port)
