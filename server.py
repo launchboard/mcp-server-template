@@ -1,4 +1,5 @@
 from fastmcp import FastMCP, Context
+import os
 
 mcp = FastMCP("Portfolio Assistant - Helping users explore a portfolio of projects.")
 
